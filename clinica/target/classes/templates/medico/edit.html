@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styleCadastro.css">
+
+    <script src="main.js"></script>
+
+    <title>Cadastro de Medico</title>
+</head>
+<body>
+
+    <div class="logo">
+        <div class="logoNome">CliniMed</div>
+        <img  class="imgnav" src="/css/83796833-cruz-mC3A9dica-dentro-en-el-sC3ADmbolo-del-corazC3B3n.png">
+
+    </div>
+    
+
+    <ul class="nav justify-content-end css-navbar">
+        <li class="nav-item">
+            <a class="nav-link active css-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="/consulta">Consultas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="/paciente">Pacientes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="/medico">Médicos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="/especialidade">Especialidades</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="/convenio">Convenios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link css-link" href="#">Sair</a>
+        </li>
+    </ul>
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="textoCadastro text-center mb-4">
+          <h2>Editar médico</h2>
+        </div>
+      </div>
+    
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="POST" action="/novoMedico">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputCpf">CRM</label>
+                            <input type="text" class="form-control" placeholder="00000000000" name="crm" th:value="${medico.crm}">
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="inputEmail4">Nome</label>
+                            <input type="text" class="form-control" placeholder="Nome" name="nome" th:value="${medico.nome}">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEspecilidade">Especialidade</label>
+                            <select class="form-control" name="especialidade">
+                                    <option th:if="${medico.especialidade != null}" th:value="${medico.especialidade.id}"
+                                    th:text="${medico.especialidade.especialidade}" style="font-weight: bold;"></option>
+                                <option th:each="especialidade : ${especialidades}" th:value="${especialidade.id}" th:text="${especialidade.especialidade}"></option>
+                              </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCpf">Telefone</label>
+                                <input type="text" class="form-control" placeholder="00000000" name="tel" th:value="${medico.tel}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputNascimento">Cep</label>
+                                <input type="text" class="form-control" id="inputCep" placeholder="00000000" name="cep" onblur="buscarCep()" th:value="${medico.cep}">
+                                <div id="cep-erro" class="form-text text-danger d-none">CEP não encontrado.</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Endereço</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Rua Exemplo" name="endereco" th:value="${medico.endereco}">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Complemento</label>
+                            <input type="text" class="form-control" placeholder="nº 0, apt 101" name="complemento" th:value="${medico.complemento}">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro" placeholder="Exemplo" name="bairro" th:value="${medico.bairro}">
+                        </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Cidade</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="Cidade" name="cidade" th:value="${medico.cidade}">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Estado</label>
+                            <input type="text" class="form-control" id="inputState" placeholder="Estado" name="estado" th:value="${medico.estado}">
+                        </div>
+                    </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <a class="btn btn-primary my-2 my-sm-0 mr-4" href="/medico">Voltar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <footer class=" text-center text-lg-start">
+
+        <div class="text-center p-1" style="background-image: linear-gradient(to right, #017cff, #0502d4); color:white ">
+          © 2023 Copyright: MDBootstrap.com
+        </div>
+
+      </footer>
+
+</body>
+</html>
