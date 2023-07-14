@@ -1,0 +1,75 @@
+body{
+    background-image: url(fundo-de-tecnologia-design-de-plano-de-fundo-da-web-design-de-tecnologia-conexao_759274-307.jpg);
+}
+.css-navbar{
+    background-image: linear-gradient(to right, #017cff, #0502d4);
+    margin-bottom: 50px;
+    height: 70px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.css-link:hover{
+    background-color: white;
+}
+
+.css-link{
+    color:white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.imgnav{
+    width: 110px;
+    position:absolute;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
+.logoNome{
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3) ;
+    font-family: 'Tangerine', cursive;
+}
+
+.box2{
+    position: flex;
+    align-items: center;
+   /* background-color: rgba(240, 248, 255, 0.938);*/
+    margin: 300px;
+    margin-top: 60px;
+
+}
+
+.boxMedico{
+    position: flex;
+    align-items: center;
+    /*background-color: rgba(240, 248, 255, 0.952);*/
+    margin: 30px 30px;
+    margin-top: 60px;
+    height: 500px;
+
+}
+
+td{
+    border: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+
+.conteiner{
+    margin-bottom: 60px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, #017cff, #0502d4);
+    
+  }
